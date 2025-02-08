@@ -13,18 +13,26 @@
                     <mat-form-field class="w-100" [appearance]="'outline'">
                         <mat-label>E-mail</mat-label>
                         <input formControlName="email" matInput placeholder="email@gmail.com">
+                        <mat-error>
+                            <app-form-feedback [control]="this.loginForm.controls['email']"></app-form-feedback>
+                        </mat-error>
                     </mat-form-field>
 
-                    <mat-form-field class="w-100" [appearance]="'outline'">
+                    <mat-form-field class="w-100 " [appearance]="'outline'">
                         <mat-label>Senha</mat-label>
                         <input formControlName="password" [type]="isPasswordVisible ? 'text' : 'password'" matInput
                             autocomplete="new-password" inputmode="none" oncontextmenu="return false"
                             oncopy="return false" onpaste="return false" oncut="return false">
+                        <mat-error>
+                            <app-form-feedback [control]="this.loginForm.controls['password']"></app-form-feedback>
+                        </mat-error>
                         <mat-icon (click)="isPasswordVisible = !isPasswordVisible" class="pointer" matSuffix>{{
                             isPasswordVisible ? "visibility" : "visibility_off" }}</mat-icon>
                     </mat-form-field>
+
                 </form>
-                <button class="btn btn-info w-100">Entrar</button>
+                <button (click)="doLogin()" class="btn btn-info w-100 mt-3"
+                    [disabled]="!loginForm.valid">Entrar</button>
                 <p class="text-center mt-3 pointer">Esqueci a senha</p>
             </div>
         </div>

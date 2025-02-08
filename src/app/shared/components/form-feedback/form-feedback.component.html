@@ -1,1 +1,3 @@
-<mat-error>Email is <strong>required</strong></mat-error>
+<span *ngIf="errorMessage" class="text-error">
+    {{ errorMessage }}
+</span>
