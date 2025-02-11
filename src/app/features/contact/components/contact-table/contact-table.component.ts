@@ -94,8 +94,8 @@ export class ContactTableComponent implements AfterViewInit {
       email: this.contactForm.get('email').value,
       cellPhone: this.contactForm.get('cellPhone').value,
       phone: this.contactForm.get('phone').value,
-      favorite: this.contactForm.get('favorite').value,
-      active: this.contactForm.get('active').value,
+      favorite: this.contactForm.get('favorite').value ?? false,
+      active: this.contactForm.get('active').value ?? false,
     };
 
     // Adiciona o id apenas se existir
