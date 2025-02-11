@@ -1,0 +1,31 @@
+:root {
+  /* Tema Claro */
+  --bg-color-light: #fff; /* Um branco suave */
+  --bg-color-semi-light: #f9fafb;
+  --text-color-light: #212121; /* Um cinza escuro para o texto */
+  --primary-color-light: #4caf50; /* Verde suave como cor primária */
+  --accent-color-light: #ff7043; /* Coral suave como cor de acento */
+
+  /* Tema Escuro */
+  --bg-color-dark: #222222; /* Um fundo escuro (quase preto) */
+  --text-color-dark: #e0e0e0; /* Cinza claro para o texto */
+  --primary-color-dark: #90caf9; /* Azul suave para o tema escuro */
+  --accent-color-dark: #80deea; /* Verde-azulado suave para o tema escuro */
+}
+
+/* Tema Claro */
+.light-theme {
+  --bg-color: var(--bg-color-light);
+  --bg-color-secundary: var(--bg-color-semi-light);
+  --text-color: var(--text-color-light);
+  --primary-color: var(--primary-color-light);
+  --accent-color: var(--accent-color-light);
+}
+
+/* Tema Escuro */
+.dark-theme {
+  --bg-color: var(--bg-color-dark);
+  --text-color: var(--text-color-dark);
+  --primary-color: var(--primary-color-dark);
+  --accent-color: var(--accent-color-dark);
+}

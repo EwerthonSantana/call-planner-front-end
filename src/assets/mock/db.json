@@ -1,10 +1,471 @@
 {
-    "users": [
-        {
-            "id": 1,
-            "name": "Ewerthon",
-            "email": "ewerthon32santana@gmail.com",
-            "password": "07082001"
-        }
-    ]
+  "users": [
+    {
+      "id": 1,
+      "name": "Ewerthon",
+      "email": "ewerthon32santana@gmail.com",
+      "password": "07082001"
+    }
+  ],
+  "contacts": [
+    {
+      "id": 1,
+      "name": "Ana Souza",
+      "email": "ana.souza@email.com",
+      "cellPhone": "(11) 98765-4321",
+      "phone": "(11) 2233-4455",
+      "favorite": true,
+      "active": true
+    },
+    {
+      "id": 2,
+      "name": "Carlos Silva",
+      "email": "carlos.silva@email.com",
+      "cellPhone": "(21) 99887-6655",
+      "phone": "(21) 3444-5566",
+      "favorite": false,
+      "active": true
+    },
+    {
+      "id": 3,
+      "name": "Joana Pereira",
+      "email": "joana.pereira@email.com",
+      "cellPhone": "(31) 98123-4567",
+      "phone": "(31) 3344-6677",
+      "favorite": true,
+      "active": true
+    },
+    {
+      "id": 4,
+      "name": "Lucas Oliveira",
+      "email": "lucas.oliveira@email.com",
+      "cellPhone": "(41) 99765-1234",
+      "phone": "(41) 2233-9988",
+      "favorite": true,
+      "active": false
+    },
+    {
+      "id": 5,
+      "name": "Mariana Costa",
+      "email": "mariana.costa@email.com",
+      "cellPhone": "(51) 98321-7654",
+      "phone": "(51) 4455-3322",
+      "favorite": false,
+      "active": true
+    },
+    {
+      "id": 6,
+      "name": "Eduardo Almeida",
+      "email": "eduardo.almeida@email.com",
+      "cellPhone": "(61) 98654-1234",
+      "phone": "(61) 5544-9988",
+      "favorite": false,
+      "active": false
+    },
+    {
+      "id": 7,
+      "name": "Patrícia Lima",
+      "email": "patricia.lima@email.com",
+      "cellPhone": "(71) 97987-6543",
+      "phone": "(71) 3366-7788",
+      "favorite": true,
+      "active": true
+    },
+    {
+      "id": 8,
+      "name": "Rafael Ferreira",
+      "email": "rafael.ferreira@email.com",
+      "cellPhone": "(81) 98123-8765",
+      "phone": "(81) 2222-3333",
+      "favorite": true,
+      "active": true
+    },
+    {
+      "id": 9,
+      "name": "Sílvia Rocha",
+      "email": "silvia.rocha@email.com",
+      "cellPhone": "(91) 98012-3456",
+      "phone": "(91) 2233-6677",
+      "favorite": false,
+      "active": true
+    },
+    {
+      "id": 10,
+      "name": "Tiago Santos",
+      "email": "tiago.santos@email.com",
+      "cellPhone": "(11) 96234-5678",
+      "phone": "(11) 4422-7788",
+      "favorite": true,
+      "active": true
+    },
+    {
+      "id": 11,
+      "name": "Fábio Martins",
+      "email": "fabio.martins@email.com",
+      "cellPhone": "(21) 99345-8765",
+      "phone": "(21) 3344-5566",
+      "favorite": true,
+      "active": true
+    },
+    {
+      "id": 12,
+      "name": "Isabela Rodrigues",
+      "email": "isabela.rodrigues@email.com",
+      "cellPhone": "(31) 98765-4321",
+      "phone": "(31) 4433-5566",
+      "favorite": false,
+      "active": false
+    },
+    {
+      "id": 13,
+      "name": "Gustavo Almeida",
+      "email": "gustavo.almeida@email.com",
+      "cellPhone": "(41) 99987-6543",
+      "phone": "(41) 3344-6677",
+      "favorite": true,
+      "active": true
+    },
+    {
+      "id": 14,
+      "name": "Juliana Barbosa",
+      "email": "juliana.barbosa@email.com",
+      "cellPhone": "(51) 98876-5432",
+      "phone": "(51) 5555-2233",
+      "favorite": false,
+      "active": true
+    },
+    {
+      "id": 15,
+      "name": "Roberto Oliveira",
+      "email": "roberto.oliveira@email.com",
+      "cellPhone": "(61) 97654-3210",
+      "phone": "(61) 2244-6677",
+      "favorite": true,
+      "active": true
+    },
+    {
+      "id": 16,
+      "name": "Aline Costa",
+      "email": "aline.costa@email.com",
+      "cellPhone": "(71) 96987-6543",
+      "phone": "(71) 2255-3366",
+      "favorite": true,
+      "active": false
+    },
+    {
+      "id": 17,
+      "name": "Felipe Martins",
+      "email": "felipe.martins@email.com",
+      "cellPhone": "(81) 96345-8765",
+      "phone": "(81) 4433-6677",
+      "favorite": false,
+      "active": true
+    },
+    {
+      "id": 18,
+      "name": "Cláudia Souza",
+      "email": "claudia.souza@email.com",
+      "cellPhone": "(91) 96453-2345",
+      "phone": "(91) 3366-7788",
+      "favorite": true,
+      "active": false
+    },
+    {
+      "id": 19,
+      "name": "André Oliveira",
+      "email": "andre.oliveira@email.com",
+      "cellPhone": "(11) 98123-4567",
+      "phone": "(11) 2255-8899",
+      "favorite": true,
+      "active": true
+    },
+    {
+      "id": 20,
+      "name": "Marcelo Rocha",
+      "email": "marcelo.rocha@email.com",
+      "cellPhone": "(21) 98987-6543",
+      "phone": "(21) 3366-7788",
+      "favorite": false,
+      "active": true
+    },
+    {
+      "id": 21,
+      "name": "Carla Pereira",
+      "email": "carla.pereira@email.com",
+      "cellPhone": "(31) 98123-1234",
+      "phone": "(31) 2244-5555",
+      "favorite": true,
+      "active": true
+    },
+    {
+      "id": 22,
+      "name": "Eduarda Lima",
+      "email": "eduarda.lima@email.com",
+      "cellPhone": "(41) 99765-4321",
+      "phone": "(41) 2233-4455",
+      "favorite": true,
+      "active": false
+    },
+    {
+      "id": 23,
+      "name": "José Santos",
+      "email": "jose.santos@email.com",
+      "cellPhone": "(51) 99234-8765",
+      "phone": "(51) 3344-5566",
+      "favorite": false,
+      "active": true
+    },
+    {
+      "id": 24,
+      "name": "Vanessa Costa",
+      "email": "vanessa.costa@email.com",
+      "cellPhone": "(61) 98123-4567",
+      "phone": "(61) 4433-6677",
+      "favorite": true,
+      "active": true
+    },
+    {
+      "id": 25,
+      "name": "Roberta Almeida",
+      "email": "roberta.almeida@email.com",
+      "cellPhone": "(71) 98123-6543",
+      "phone": "(71) 5566-7788",
+      "favorite": true,
+      "active": false
+    },
+    {
+      "id": 26,
+      "name": "Simone Pereira",
+      "email": "simone.pereira@email.com",
+      "cellPhone": "(81) 99432-7654",
+      "phone": "(81) 3366-6677",
+      "favorite": false,
+      "active": true
+    },
+    {
+      "id": 27,
+      "name": "Cássio Ferreira",
+      "email": "cassio.ferreira@email.com",
+      "cellPhone": "(91) 99012-3456",
+      "phone": "(91) 2233-5566",
+      "favorite": true,
+      "active": false
+    },
+    {
+      "id": 28,
+      "name": "Letícia Rocha",
+      "email": "leticia.rocha@email.com",
+      "cellPhone": "(11) 96123-4567",
+      "phone": "(11) 2233-4455",
+      "favorite": true,
+      "active": true
+    },
+    {
+      "id": 29,
+      "name": "Paulo Ferreira",
+      "email": "paulo.ferreira@email.com",
+      "cellPhone": "(21) 98765-4321",
+      "phone": "(21) 2233-6677",
+      "favorite": false,
+      "active": true
+    },
+    {
+      "id": 30,
+      "name": "Marcos Santos",
+      "email": "marcos.santos@email.com",
+      "cellPhone": "(31) 96321-7654",
+      "phone": "(31) 5566-7788",
+      "favorite": true,
+      "active": true
+    },
+    {
+      "id": 31,
+      "name": "Sérgio Oliveira",
+      "email": "sergio.oliveira@email.com",
+      "cellPhone": "(41) 99123-4567",
+      "phone": "(41) 2233-5566",
+      "favorite": true,
+      "active": true
+    },
+    {
+      "id": 32,
+      "name": "Fernanda Lima",
+      "email": "fernanda.lima@email.com",
+      "cellPhone": "(51) 97654-1234",
+      "phone": "(51) 3344-6677",
+      "favorite": false,
+      "active": true
+    },
+    {
+      "id": 33,
+      "name": "Gustavo Rocha",
+      "email": "gustavo.rocha@email.com",
+      "cellPhone": "(61) 98765-4321",
+      "phone": "(61) 2255-8899",
+      "favorite": true,
+      "active": false
+    },
+    {
+      "id": 34,
+      "name": "Bruna Costa",
+      "email": "bruna.costa@email.com",
+      "cellPhone": "(71) 96321-7654",
+      "phone": "(71) 3344-5566",
+      "favorite": false,
+      "active": true
+    },
+    {
+      "id": 35,
+      "name": "Carlos Pereira",
+      "email": "carlos.pereira@email.com",
+      "cellPhone": "(81) 98123-8765",
+      "phone": "(81) 2233-6677",
+      "favorite": true,
+      "active": true
+    },
+    {
+      "id": 36,
+      "name": "Monique Alves",
+      "email": "monique.alves@email.com",
+      "cellPhone": "(91) 98876-5432",
+      "phone": "(91) 3344-5566",
+      "favorite": true,
+      "active": false
+    },
+    {
+      "id": 37,
+      "name": "Isabel Ferreira",
+      "email": "isabel.ferreira@email.com",
+      "cellPhone": "(11) 98765-4321",
+      "phone": "(11) 5555-6677",
+      "favorite": false,
+      "active": true
+    },
+    {
+      "id": 38,
+      "name": "João Souza",
+      "email": "joao.souza@email.com",
+      "cellPhone": "(21) 98877-6655",
+      "phone": "(21) 3366-6677",
+      "favorite": true,
+      "active": true
+    },
+    {
+      "id": 39,
+      "name": "Cláudio Lima",
+      "email": "claudio.lima@email.com",
+      "cellPhone": "(31) 96321-7654",
+      "phone": "(31) 3344-5566",
+      "favorite": false,
+      "active": false
+    },
+    {
+      "id": 40,
+      "name": "Tatiane Almeida",
+      "email": "tatiane.almeida@email.com",
+      "cellPhone": "(41) 98123-8765",
+      "phone": "(41) 2255-8899",
+      "favorite": true,
+      "active": true
+    },
+    {
+      "id": 41,
+      "name": "Thiago Costa",
+      "email": "thiago.costa@email.com",
+      "cellPhone": "(51) 98654-1234",
+      "phone": "(51) 4455-3322",
+      "favorite": true,
+      "active": true
+    },
+    {
+      "id": 42,
+      "name": "Lorena Rocha",
+      "email": "lorena.rocha@email.com",
+      "cellPhone": "(61) 98653-2323",
+      "phone": "(61) 2233-6677",
+      "favorite": false,
+      "active": true
+    },
+    {
+      "id": 43,
+      "name": "Rogério Souza",
+      "email": "rogerio.souza@email.com",
+      "cellPhone": "(71) 98765-3210",
+      "phone": "(71) 3344-5566",
+      "favorite": true,
+      "active": false
+    },
+    {
+      "id": 44,
+      "name": "Sandra Oliveira",
+      "email": "sandra.oliveira@email.com",
+      "cellPhone": "(81) 97654-3210",
+      "phone": "(81) 4455-6677",
+      "favorite": false,
+      "active": true
+    },
+    {
+      "id": 45,
+      "name": "Edson Almeida",
+      "email": "edson.almeida@email.com",
+      "cellPhone": "(91) 96321-4567",
+      "phone": "(91) 5566-2233",
+      "favorite": true,
+      "active": true
+    },
+    {
+      "id": 46,
+      "name": "Clara Souza",
+      "email": "clara.souza@email.com",
+      "cellPhone": "(11) 95123-7654",
+      "phone": "(11) 3344-6677",
+      "favorite": true,
+      "active": false
+    },
+    {
+      "id": 47,
+      "name": "Lúcio Pereira",
+      "email": "lucio.pereira@email.com",
+      "cellPhone": "(21) 96321-7654",
+      "phone": "(21) 2233-5566",
+      "favorite": false,
+      "active": true
+    },
+    {
+      "id": 48,
+      "name": "Márcia Almeida",
+      "email": "marcia.almeida@email.com",
+      "cellPhone": "(31) 98765-4321",
+      "phone": "(31) 4455-2233",
+      "favorite": true,
+      "active": true
+    },
+    {
+      "id": 49,
+      "name": "Rita Ferreira",
+      "email": "rita.ferreira@email.com",
+      "cellPhone": "(41) 97765-4321",
+      "phone": "(41) 2233-9988",
+      "favorite": false,
+      "active": true
+    },
+    {
+      "id": 50,
+      "name": "Gilberto Rocha",
+      "email": "gilberto.rocha@email.com",
+      "cellPhone": "(51) 98877-6666",
+      "phone": "(51) 3344-5566",
+      "favorite": true,
+      "active": true
+    },
+    {
+      "id": null,
+      "name": "ewerthon santana",
+      "email": "ewerthon@gmail.com",
+      "cellPhone": "(81) 9852-8166",
+      "phone": "(00) 0000-0000",
+      "favorite": null,
+      "active": null
+    }
+  ]
 }

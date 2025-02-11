@@ -1,0 +1,13 @@
+@import '../styles/_global.css';
+@import '../styles/_themes.css';
+@import '../styles/_layout.css';
+
+.pointer {
+  cursor: pointer;
+  opacity: 1;
+  transition: opacity 0.3s;
+}
+
+.pointer:hover {
+  opacity: 0.7;
+}

@@ -1,0 +1,29 @@
+/* ::ng-deep .example-container {
+  height: 100vh;
+}
+
+::ng-deep .mat-drawer {
+  background-color: #1e1e2f;
+  color: white;
+  width: 250px;
+}
+
+::ng-deep .mat-drawer-content {
+  background-color: #f4f4f4;
+  color: black;
+  padding: 16px;
+} */
+
+.user-name {
+  font-size: 0.6em;
+  margin-bottom: 0;
+}
+
+.user-office {
+  font-size: 0.5em;
+  margin-bottom: 0;
+}
+
+.main-content {
+  height: 100vh;
+}

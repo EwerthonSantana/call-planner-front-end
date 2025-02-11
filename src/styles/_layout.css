@@ -1,0 +1,27 @@
+/* Exemplo com ::ng-deep */
+.mat-toolbar {
+  background-color: var(--bg-color) !important;
+  color: var(--text-color) !important;
+}
+
+i {
+  color: var(--text-color);
+}
+
+.mat-icon {
+  color: var(--text-color);
+}
+
+mat-toolbar {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.0625);
+}
+
+.mat-drawer {
+  background-color: var(--bg-color) !important;
+  color: var(--text-color);
+}
+
+.mat-drawer-content {
+  background-color: var(--bg-color-secundary) !important;
+  color: var(--text-color) !important;
+}
