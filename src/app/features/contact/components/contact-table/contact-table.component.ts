@@ -49,7 +49,6 @@ export class ContactTableComponent implements AfterViewInit {
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
-  @ViewChild('deleteModal') deleteModal: any;
 
   constructor(
     private contactService: ContactService,
@@ -91,7 +90,6 @@ export class ContactTableComponent implements AfterViewInit {
     if (!this.contactForm.valid) return;
 
     const payload: IContact = {
-      id: this.contactForm.get('id').value,
       name: this.contactForm.get('name').value,
       email: this.contactForm.get('email').value,
       cellPhone: this.contactForm.get('cellPhone').value,
@@ -100,30 +98,43 @@ export class ContactTableComponent implements AfterViewInit {
       active: this.contactForm.get('active').value,
     };
 
-    if (!!payload['id']) {
-      this.contactService.updateContact(payload).subscribe((res) => {
-        this.toastService.showToast({
-          message: 'O contato foi alterado com sucesso!',
-          title: 'Sistema',
-          type: 'success',
-        });
-      });
-      return;
+    // Adiciona o id apenas se existir
+    const contactId = this.contactForm.get('id')?.value;
+    if (contactId) {
+      payload.id = contactId;
     }
 
-    this.contactService.addContact(payload).subscribe((res) => {
+    // Se houver id, faz o update, caso contrário faz o post
+    const contactOperation = contactId
+      ? this.contactService.updateContact(payload)
+      : this.contactService.addContact(payload);
+
+    contactOperation.subscribe((res) => {
+      const message = contactId ? 'O contato foi alterado com sucesso!' : 'O contato foi criado com sucesso!';
+
       this.toastService.showToast({
-        message: 'O contato foi criado com sucesso!',
+        message,
         title: 'Sistema',
         type: 'success',
       });
     });
   }
 
-  editRow(row: any): void {}
-
-  openDeleteDialogModal(selectedRow: IContact) {
+  selectRow(selectedRow: IContact) {
     this.selectedContact = selectedRow;
+  }
+
+  populateFormToEdit() {
+    const contactToEdit: IContact = this.selectedContact;
+    this.contactForm.patchValue({
+      id: contactToEdit.id,
+      name: contactToEdit.name,
+      email: contactToEdit.email,
+      cellPhone: contactToEdit.cellPhone,
+      phone: contactToEdit.phone,
+      favorite: contactToEdit.favorite,
+      active: contactToEdit.active,
+    });
   }
 
   deleteContact(): void {

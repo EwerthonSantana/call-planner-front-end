@@ -7,7 +7,8 @@ import { MatListModule } from '@angular/material/list';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { RouterModule, RouterOutlet } from '@angular/router';
+import { Router, RouterModule, RouterOutlet } from '@angular/router';
+import { AuthService } from '../../../../core/services/auth.service';
 
 @Component({
   selector: 'app-home',
@@ -30,7 +31,10 @@ export class HomeComponent {
   isSidenavOpen: boolean = true;
   auxThemeSwitch: boolean = true;
 
-  constructor() {
+  constructor(
+    private authService: AuthService,
+    private router: Router
+  ) {
     const body = document.body;
     body.classList.add('light-theme');
   }
@@ -45,5 +49,10 @@ export class HomeComponent {
     }
     body.classList.add('dark-theme');
     body.classList.remove('light-theme');
+  }
+
+  logout() {
+    this.authService.logout();
+    this.router.navigate(['/']);
   }
 }

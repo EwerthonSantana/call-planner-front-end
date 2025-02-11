@@ -15,20 +15,25 @@
       <mat-slide-toggle [checked]="auxThemeSwitch" (toggleChange)="toggleTheme()"
         ><i class="fa-regular fa-sun fs-3"></i
       ></mat-slide-toggle>
-      <div class="user-section dropdown pointer ms-3" data-bs-toggle="dropdown" aria-expanded="false">
-        <div class="d-flex align-items-center">
-          <i class="fa-regular fa-user fs-1 me-3"></i>
-          <div class="desc me-3">
-            <p class="user-name">Ewerthon</p>
-            <p class="user-office">Admin</p>
-          </div>
-          <i class="fa-solid fa-arrow-down"></i>
+      <div class="d-flex align-items-center pointer">
+        <i class="fa-regular fa-user fs-1 me-3"></i>
+        <div class="desc me-3">
+          <p class="user-name">Ewerthon</p>
         </div>
-        <ul class="dropdown-menu">
+      </div>
+      <!-- Dropdown básico -->
+      <div class="dropdown">
+        <div
+          class="dropdown-toggle"
+          type="button"
+          id="dropdownMenuButton"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+        ></div>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
           <li><a class="dropdown-item" href="#">Perfil</a></li>
-          <!-- <li><a class="dropdown-item" href="#">Another action</a></li> -->
           <li><hr class="dropdown-divider" /></li>
-          <li><a class="dropdown-item" href="#">Sair</a></li>
+          <li><a class="dropdown-item" href="#" (click)="logout()">Sair</a></li>
         </ul>
       </div>
     </div>

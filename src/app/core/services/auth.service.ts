@@ -24,6 +24,10 @@ export class AuthService {
     return localStorage.getItem('token');
   }
 
+  logout() {
+    localStorage.clear();
+  }
+
   setToken() {
     localStorage.setItem('token', this.generateToken(24));
   }

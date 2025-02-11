@@ -21,7 +21,7 @@ export class ContactService {
   }
 
   updateContact(contact: IContact) {
-    return this.http.put(`${this.api}/contacts`, contact);
+    return this.http.put(`${this.api}/contacts/${contact.id}`, contact);
   }
 
   deleteContact(id: number) {

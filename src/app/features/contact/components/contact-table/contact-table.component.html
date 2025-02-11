@@ -14,6 +14,7 @@
       data-bs-toggle="modal"
       data-bs-target="#contactFormModal"
       (click)="contactForm.reset()"
+      #modalForm
     ></i>
   </div>
 </div>
@@ -28,15 +29,10 @@
 
       <!-- Para a coluna de 'actions' (Ações) -->
       <ng-container *ngIf="column === 'actions'">
-        <button mat-icon-button (click)="editRow(row)">
+        <button mat-icon-button (click)="selectRow(row); modalForm.click(); populateFormToEdit()">
           <mat-icon class="edit-icon">edit</mat-icon>
         </button>
-        <button
-          (click)="openDeleteDialogModal(row)"
-          mat-icon-button
-          data-bs-toggle="modal"
-          data-bs-target="#deleteModal"
-        >
+        <button (click)="selectRow(row)" mat-icon-button data-bs-toggle="modal" data-bs-target="#deleteModal">
           <mat-icon class="delete-icon">delete</mat-icon>
         </button>
       </ng-container>
@@ -64,6 +60,7 @@
 >
 </mat-paginator>
 
+<!-- Modal form -->
 <div
   class="modal fade"
   id="contactFormModal"
@@ -132,10 +129,10 @@
                 </mat-form-field>
               </div>
               <div class="col-2">
-                <mat-checkbox class="example-margin" form>Favorito</mat-checkbox>
+                <mat-checkbox class="example-margin" formControlName="favorite">Favorito</mat-checkbox>
               </div>
               <div class="col-1">
-                <mat-checkbox class="example-margin">Ativo</mat-checkbox>
+                <mat-checkbox class="example-margin" formControlName="active">Ativo</mat-checkbox>
               </div>
             </div>
           </form>
