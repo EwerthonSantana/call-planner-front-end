@@ -2,8 +2,7 @@
   "name": "call-planner",
   "version": "0.0.0",
   "scripts": {
-    "ng": "ng",
-    "start": "ng serve",
+    "json-server": "npx json-server --watch src/assets/mock/db.json ",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"

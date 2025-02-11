@@ -16,5 +16,5 @@ p {
 }
 
 .modal-backdrop {
-  z-index: -1 !important; /* O backdrop deve ficar atrás do modal */
+  z-index: -1 !important; /* Resolver modal com problemas */
 }
