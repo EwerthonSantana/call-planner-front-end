@@ -21,15 +21,18 @@ export class AuthService {
   }
 
   getToken(): string | null {
-    return localStorage.getItem('token');
+    return localStorage.getItem('token') || sessionStorage.getItem('token');
   }
 
   logout() {
     localStorage.clear();
+    sessionStorage.clear();
   }
 
-  setToken() {
-    localStorage.setItem('token', this.generateToken(24));
+  setToken(stillLogged?: boolean) {
+    stillLogged
+      ? localStorage.setItem('token', this.generateToken(24))
+      : sessionStorage.setItem('token', this.generateToken(24));
   }
 
   isAuthenticated() {
@@ -51,4 +54,9 @@ export class AuthService {
   login(email: string, password: string): Observable<any> {
     return this.http.get<any[]>(`${this.api}/users?email=${email}&password=${password}`);
   }
+
+  // Implementar com o backend
+  // forgetPassword(email: string): Observable<any> {
+
+  // }
 }

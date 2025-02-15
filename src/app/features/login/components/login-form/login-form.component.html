@@ -1,40 +1,56 @@
 <div class="row">
-    <div class="col-9">
-        <div class="left-side">
+  <div class="d-none d-xxl-block col-9">
+    <div class="left-side"></div>
+  </div>
+  <div class="col-12 col-xxl-3">
+    <!-- <div class="row">
+      <div class="col-4">
+        <p>teste</p>
+      </div>
+    </div> -->
+    <div class="container">
+      <div class="row align-items-center justify-content-center rigth-side">
+        <div class="col-10">
+          <h1 class="fw-medium text-center">CΛLLPLΛNNΞR</h1>
+          <p class="fs-6 mb-5 text-center">para entrar no sistema faça login abaixo!</p>
+
+          <form [formGroup]="loginForm">
+            <mat-form-field class="w-100" [appearance]="'outline'">
+              <mat-label>E-mail</mat-label>
+              <input formControlName="email" matInput placeholder="email@gmail.com" />
+              <mat-error>
+                <app-form-feedback [control]="this.loginForm.controls['email']"></app-form-feedback>
+              </mat-error>
+            </mat-form-field>
+
+            <mat-form-field class="w-100" [appearance]="'outline'">
+              <mat-label>Senha</mat-label>
+              <input
+                formControlName="password"
+                [type]="isPasswordVisible ? 'text' : 'password'"
+                matInput
+                autocomplete="new-password"
+                inputmode="none"
+                oncontextmenu="return false"
+                oncopy="return false"
+                onpaste="return false"
+                oncut="return false"
+              />
+              <mat-error>
+                <app-form-feedback [control]="this.loginForm.controls['password']"></app-form-feedback>
+              </mat-error>
+              <mat-icon (click)="isPasswordVisible = !isPasswordVisible" class="pointer" matSuffix>{{
+                isPasswordVisible ? 'visibility' : 'visibility_off'
+              }}</mat-icon>
+            </mat-form-field>
+
+            <mat-checkbox formControlName="stillLogged">Manter-se conectado</mat-checkbox>
+          </form>
+
+          <button (click)="doLogin()" class="btn btn-info w-100 mt-3" [disabled]="!loginForm.valid">Entrar</button>
+          <p class="text-center mt-3 pointer" routerLink="/forget-password">Esqueci minha senha</p>
         </div>
+      </div>
     </div>
-    <div class="col-3">
-        <div class="row align-items-center justify-content-center rigth-side">
-            <div class="col-10">
-                <h1 class="fw-medium">Bem vindo</h1>
-                <p class="fs-6 mb-5">para entrar no sistema faça login abaixo!</p>
-                <form [formGroup]="loginForm">
-
-                    <mat-form-field class="w-100" [appearance]="'outline'">
-                        <mat-label>E-mail</mat-label>
-                        <input formControlName="email" matInput placeholder="email@gmail.com">
-                        <mat-error>
-                            <app-form-feedback [control]="this.loginForm.controls['email']"></app-form-feedback>
-                        </mat-error>
-                    </mat-form-field>
-
-                    <mat-form-field class="w-100 " [appearance]="'outline'">
-                        <mat-label>Senha</mat-label>
-                        <input formControlName="password" [type]="isPasswordVisible ? 'text' : 'password'" matInput
-                            autocomplete="new-password" inputmode="none" oncontextmenu="return false"
-                            oncopy="return false" onpaste="return false" oncut="return false">
-                        <mat-error>
-                            <app-form-feedback [control]="this.loginForm.controls['password']"></app-form-feedback>
-                        </mat-error>
-                        <mat-icon (click)="isPasswordVisible = !isPasswordVisible" class="pointer" matSuffix>{{
-                            isPasswordVisible ? "visibility" : "visibility_off" }}</mat-icon>
-                    </mat-form-field>
-
-                </form>
-                <button (click)="doLogin()" class="btn btn-info w-100 mt-3"
-                    [disabled]="!loginForm.valid">Entrar</button>
-                <p class="text-center mt-3 pointer">Esqueci a senha</p>
-            </div>
-        </div>
-    </div>
+  </div>
 </div>

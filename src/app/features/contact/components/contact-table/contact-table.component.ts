@@ -10,7 +10,6 @@ import { MatInputModule } from '@angular/material/input';
 import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
 import { MatSort, MatSortModule } from '@angular/material/sort';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
-import { Router } from '@angular/router';
 import { NgxMaskDirective } from 'ngx-mask';
 import { ContactService } from '../../../../core/services/contact.service';
 import { ToastService } from '../../../../core/services/toast.service';
@@ -53,8 +52,7 @@ export class ContactTableComponent implements AfterViewInit {
   constructor(
     private contactService: ContactService,
     private formBuilder: FormBuilder,
-    private toastService: ToastService,
-    private router: Router
+    private toastService: ToastService
   ) {
     this.contactForm = this.formBuilder.group({
       id: [''],
@@ -109,7 +107,7 @@ export class ContactTableComponent implements AfterViewInit {
       ? this.contactService.updateContact(payload)
       : this.contactService.addContact(payload);
 
-    contactOperation.subscribe((res) => {
+    contactOperation.subscribe(() => {
       const message = contactId ? 'O contato foi alterado com sucesso!' : 'O contato foi criado com sucesso!';
 
       this.toastService.showToast({
