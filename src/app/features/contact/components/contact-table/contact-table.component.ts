@@ -115,6 +115,8 @@ export class ContactTableComponent implements AfterViewInit {
         title: 'Sistema',
         type: 'success',
       });
+
+      this.loadContacts();
     });
   }
 
@@ -143,6 +145,8 @@ export class ContactTableComponent implements AfterViewInit {
         title: 'Sistema',
         type: 'info',
       });
+
+      this.loadContacts();
     });
   }
 }
