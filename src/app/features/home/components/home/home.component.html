@@ -1,4 +1,4 @@
-<mat-toolbar>
+<!-- <mat-toolbar>
   <div class="d-flex justify-content-between align-items-center w-100">
     <div class="d-flex align-items-center">
       <button
@@ -21,7 +21,6 @@
           <p class="user-name">Ewerthon</p>
         </div>
       </div>
-      <!-- Dropdown básico -->
       <div class="dropdown">
         <div
           class="dropdown-toggle"
@@ -64,4 +63,124 @@
       </div>
     </div>
   </mat-sidenav-content>
-</mat-sidenav-container>
+</mat-sidenav-container> -->
+
+<header>
+  <nav class="text-white">
+    <div class="container-fluid">
+      <div class="d-flex align-items-center justify-content-between p-2">
+        <div class="d-flex align-items-center">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 448 512"
+            role="button"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#offcanvasExample"
+            aria-controls="offcanvasExample"
+            class="d-xl-none me-3"
+          >
+            <!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+            <path
+              fill="#ffffff"
+              d="M0 96C0 78.3 14.3 64 32 64l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 128C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 288c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32L32 448c-17.7 0-32-14.3-32-32s14.3-32 32-32l384 0c17.7 0 32 14.3 32 32z"
+            />
+          </svg>
+          <div class="nav-brand-custom" routerLink="/">CΛLLPLΛNNΞR</div>
+          <ul class="nav text-white d-none d-xl-flex ms-3">
+            <li class="nav-item"><a class="nav-link text-white" href="#">Contatos</a></li>
+            <li class="nav-item"><a class="nav-link text-white" href="#">Usuários</a></li>
+            <li class="nav-item"><a class="nav-link text-white" href="#">Dashboard</a></li>
+            <li class="nav-item"><a class="nav-link text-white" href="#">Ajuda</a></li>
+            <li class="nav-item"><a class="nav-link text-white" href="#">Sobre nós</a></li>
+          </ul>
+        </div>
+
+        <div class="d-flex align-items-center">
+          <svg class="pointer" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+            <!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+            <path
+              fill="#ffffff"
+              d="M224 0c-17.7 0-32 14.3-32 32l0 19.2C119 66 64 130.6 64 208l0 25.4c0 45.4-15.5 89.5-43.8 124.9L5.3 377c-5.8 7.2-6.9 17.1-2.9 25.4S14.8 416 24 416l400 0c9.2 0 17.6-5.3 21.6-13.6s2.9-18.2-2.9-25.4l-14.9-18.6C399.5 322.9 384 278.8 384 233.4l0-25.4c0-77.4-55-142-128-156.8L256 32c0-17.7-14.3-32-32-32zm0 96c61.9 0 112 50.1 112 112l0 25.4c0 47.9 13.9 94.6 39.7 134.6L72.3 368C98.1 328 112 281.3 112 233.4l0-25.4c0-61.9 50.1-112 112-112zm64 352l-64 0-64 0c0 17 6.7 33.3 18.7 45.3s28.3 18.7 45.3 18.7s33.3-6.7 45.3-18.7s18.7-28.3 18.7-45.3z"
+            />
+          </svg>
+          <div class="d-flex align-items-center ms-3">
+            <svg id="user-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+              <!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+              <path
+                fill="#ffffff"
+                d="M304 128a80 80 0 1 0 -160 0 80 80 0 1 0 160 0zM96 128a128 128 0 1 1 256 0A128 128 0 1 1 96 128zM49.3 464l349.5 0c-8.9-63.3-63.3-112-129-112l-91.4 0c-65.7 0-120.1 48.7-129 112zM0 482.3C0 383.8 79.8 304 178.3 304l91.4 0C368.2 304 448 383.8 448 482.3c0 16.4-13.3 29.7-29.7 29.7L29.7 512C13.3 512 0 498.7 0 482.3z"
+              />
+            </svg>
+            <p class="ms-2 d-none d-sm-block">Joao</p>
+            <svg
+              class="pointer ms-2 dropdown-toggle"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 512 512"
+            >
+              <!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+              <path
+                fill="#ffffff"
+                d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"
+              />
+            </svg>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Perfil</a></li>
+              <li><a class="dropdown-item" href="#">Configurações</a></li>
+              <li><hr class="dropdown-divider" /></li>
+              <li><a (click)="logout()" class="dropdown-item" href="#">Sair</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container mt-5">
+      <h1 class="text-center mb-3">Agendamentos inteligentes, comunicação eficiente</h1>
+      <h5 class="fw-light text-center">
+        Tudo o que você precisa para organizar e otimizar seus contatos, com tecnologia ágil e intuitiva.
+      </h5>
+
+      <div class="card-recently"></div>
+
+      <!-- <form class="example-form">
+        <mat-form-field class="w-100" appearance="outline">
+          <mat-label></mat-label>
+          <input
+            type="text"
+            placeholder="Pesquise por um contato aqui"
+            matInput
+            [formControl]="searchControl"
+            [matAutocomplete]="auto"
+          />
+          <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+            @for (option of filteredOptions | async; track option) {
+              <mat-option [value]="option">{{ option }}</mat-option>
+            }
+          </mat-autocomplete>
+        </mat-form-field>
+      </form> -->
+    </div>
+  </nav>
+</header>
+
+<!-- Offcanvas -->
+<div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="offcanvasExampleLabel">Offcanvas</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+    <div>
+      Some text as placeholder. In real life you can have the elements you have chosen. Like, text, images, lists, etc.
+    </div>
+    <div class="dropdown mt-3">
+      <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">Dropdown button</button>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="#">Action</a></li>
+        <li><a class="dropdown-item" href="#">Another action</a></li>
+        <li><a class="dropdown-item" href="#">Something else here</a></li>
+      </ul>
+    </div>
+  </div>
+</div>

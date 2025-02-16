@@ -1,24 +1,12 @@
-/* ::ng-deep .example-container {
-  height: 100vh;
+header {
+  background: url('/assets/images/nav-main.jpg') top/cover no-repeat;
 }
 
-::ng-deep .mat-drawer {
-  background-color: #1e1e2f;
-  color: white;
-  width: 250px;
+.nav-brand-custom {
+  font-size: 1.8em;
+  cursor: pointer;
 }
 
-::ng-deep .mat-drawer-content {
-  background-color: #f4f4f4;
-  color: black;
-  padding: 16px;
-} */
-
-.user-name {
-  font-size: 0.7em;
-  margin-bottom: 0;
-}
-
-.main-content {
-  height: 100vh;
+svg {
+  width: 20px;
 }
