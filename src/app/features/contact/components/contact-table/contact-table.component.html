@@ -52,9 +52,10 @@
 </table>
 
 <mat-paginator
-  [pageSize]="5"
-  [pageSizeOptions]="[5, 10, 20]"
-  (page)="loadContacts()"
+  (page)="onPageChange($event)"
+  pageSize="10"
+  length="30"
+  [pageSizeOptions]="[5, 10, 15]"
   showFirstLastButtons
   aria-label="Select contacts page"
 >
@@ -103,7 +104,7 @@
                   <mat-label>Celular</mat-label>
                   <input
                     mask="(00) 0000-0000"
-                    [dropSpecialCharacters]="false"
+                    [dropSpecialCharacters]="true"
                     formControlName="cellPhone"
                     matInput
                     placeholder="(00) 00000-0000"
@@ -118,7 +119,7 @@
                   <mat-label>Telefone</mat-label>
                   <input
                     mask="(00) 0000-0000"
-                    [dropSpecialCharacters]="false"
+                    [dropSpecialCharacters]="true"
                     formControlName="phone"
                     matInput
                     placeholder="(00) 0000-0000"

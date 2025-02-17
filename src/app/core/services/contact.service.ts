@@ -12,19 +12,19 @@ export class ContactService {
 
   constructor(private http: HttpClient) {}
 
-  getContacts(): Observable<any> {
-    return this.http.get(`${this.api}/contacts`);
+  getContacts(page: number, PageSize: number): Observable<any> {
+    return this.http.get(`${this.api}/Contacts?page=${page}&size=${PageSize}`);
   }
 
   addContact(contact: IContact) {
-    return this.http.post(`${this.api}/contacts`, contact);
+    return this.http.post(`${this.api}/Contacts`, contact);
   }
 
   updateContact(contact: IContact) {
-    return this.http.put(`${this.api}/contacts/${contact.id}`, contact);
+    return this.http.put(`${this.api}/Contacts/${contact.idContact}`, contact);
   }
 
-  deleteContact(id: number) {
-    return this.http.delete(`${this.api}/contacts/${id}`);
+  deleteContact(id: string) {
+    return this.http.delete(`${this.api}/Contacts/${id}`);
   }
 }

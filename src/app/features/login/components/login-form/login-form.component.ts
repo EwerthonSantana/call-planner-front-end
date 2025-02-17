@@ -52,17 +52,9 @@ export class LoginFormComponent {
       password: this.loginForm.get('password')?.value,
     };
 
-    this.authService.login(loginPayload.email, loginPayload.password).subscribe((user) => {
-      if (!user[0]) {
-        return this.toastService.showToast({
-          message: 'O E-mail ou a senha informados estão incorretos!',
-          title: 'Sistema',
-          type: 'error',
-        });
-      }
-
-      this.authService.setToken(this.loginForm.get('stillLogged').value);
-      this.authService.setUser(user[0]);
+    this.authService.login(loginPayload).subscribe((resp) => {
+      const keepLogged: boolean = this.loginForm.get('stillLogged').value;
+      this.authService.setToken(resp.token, keepLogged);
       this.router.navigate(['/']);
     });
   }

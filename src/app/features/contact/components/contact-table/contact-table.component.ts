@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { AfterViewInit, Component, ViewChild } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, Component, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
@@ -7,13 +7,12 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
-import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
+import { MatPaginator, MatPaginatorModule, PageEvent } from '@angular/material/paginator';
 import { MatSort, MatSortModule } from '@angular/material/sort';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 import { NgxMaskDirective } from 'ngx-mask';
 import { ContactService } from '../../../../core/services/contact.service';
 import { ToastService } from '../../../../core/services/toast.service';
-import { phoneValidator } from '../../../../core/Validators/phone.validator';
 import { FormFeedbackComponent } from '../../../../shared/components/form-feedback/form-feedback.component';
 import { TranslateColumnPipe } from '../../../../shared/pipes/translate-column.pipe';
 import { IContact } from '../../interfaces/contact.interface';
@@ -40,9 +39,9 @@ import { IContact } from '../../interfaces/contact.interface';
   styleUrl: './contact-table.component.css',
 })
 export class ContactTableComponent implements AfterViewInit {
-  displayedColumns: string[] = ['id', 'name', 'email', 'cellPhone', 'phone', 'favorite', 'active', 'actions'];
+  displayedColumns: string[] = ['idContact', 'name', 'email', 'cellPhone', 'phone', 'favorite', 'active', 'actions'];
   dataSource = new MatTableDataSource<IContact>();
-  totalContacts = 0;
+  totalContacts = 21;
   selectedContact: IContact;
   contactForm: FormGroup;
 
@@ -52,14 +51,15 @@ export class ContactTableComponent implements AfterViewInit {
   constructor(
     private contactService: ContactService,
     private formBuilder: FormBuilder,
-    private toastService: ToastService
+    private toastService: ToastService,
+    private changeDetectorRef: ChangeDetectorRef
   ) {
     this.contactForm = this.formBuilder.group({
       id: [''],
       name: ['', [Validators.required, Validators.minLength(3)]],
       email: ['', [Validators.required, Validators.email]],
-      cellPhone: ['', [Validators.required, phoneValidator()]],
-      phone: ['', [Validators.required, phoneValidator()]],
+      cellPhone: ['', [Validators.required]],
+      phone: ['', [Validators.required]],
       favorite: [false],
       active: [false],
     });
@@ -69,13 +69,19 @@ export class ContactTableComponent implements AfterViewInit {
     this.dataSource.paginator = this.paginator;
     this.dataSource.sort = this.sort;
 
-    this.loadContacts();
+    this.loadContacts(this.paginator.pageIndex, this.paginator.pageSize);
   }
 
-  loadContacts() {
-    this.contactService.getContacts().subscribe((res) => {
-      this.dataSource.data = res;
-      this.totalContacts = res.lenght;
+  onPageChange(event: PageEvent) {
+    this.loadContacts(event.pageIndex, event.pageSize);
+  }
+
+  loadContacts(page: number, pageSize: number) {
+    this.contactService.getContacts(page, pageSize).subscribe((res) => {
+      this.dataSource.data = res.content;
+      this.totalContacts = res.totalElements;
+      this.paginator.length = this.totalContacts;
+      this.changeDetectorRef.detectChanges();
     });
   }
 
@@ -88,6 +94,7 @@ export class ContactTableComponent implements AfterViewInit {
     if (!this.contactForm.valid) return;
 
     const payload: IContact = {
+      idContact: this.contactForm.get('id').value,
       name: this.contactForm.get('name').value,
       email: this.contactForm.get('email').value,
       cellPhone: this.contactForm.get('cellPhone').value,
@@ -99,7 +106,7 @@ export class ContactTableComponent implements AfterViewInit {
     // Adiciona o id apenas se existir
     const contactId = this.contactForm.get('id')?.value;
     if (contactId) {
-      payload.id = contactId;
+      payload.idContact = contactId;
     }
 
     // Se houver id, faz o update, caso contrário faz o post
@@ -116,7 +123,7 @@ export class ContactTableComponent implements AfterViewInit {
         type: 'success',
       });
 
-      this.loadContacts();
+      this.loadContacts(this.paginator.pageIndex, this.paginator.pageSize);
     });
   }
 
@@ -127,7 +134,7 @@ export class ContactTableComponent implements AfterViewInit {
   populateFormToEdit() {
     const contactToEdit: IContact = this.selectedContact;
     this.contactForm.patchValue({
-      id: contactToEdit.id,
+      id: contactToEdit.idContact,
       name: contactToEdit.name,
       email: contactToEdit.email,
       cellPhone: contactToEdit.cellPhone,
@@ -138,7 +145,7 @@ export class ContactTableComponent implements AfterViewInit {
   }
 
   deleteContact(): void {
-    const id: number = this.selectedContact.id;
+    const id: string = this.selectedContact.idContact;
     this.contactService.deleteContact(id).subscribe((res) => {
       this.toastService.showToast({
         message: 'O contato foi EXCLUIDO com sucesso!',
@@ -146,7 +153,7 @@ export class ContactTableComponent implements AfterViewInit {
         type: 'info',
       });
 
-      this.loadContacts();
+      this.loadContacts(this.paginator.pageIndex, this.paginator.pageSize);
     });
   }
 }
